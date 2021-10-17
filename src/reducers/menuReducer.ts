@@ -1,6 +1,7 @@
 import { secondarySort } from '../helpers/sort';
+import { MenuState } from '../models/state';
 
-const initialState = {
+const initialState: MenuState = {
     sortedData: []
 };
 

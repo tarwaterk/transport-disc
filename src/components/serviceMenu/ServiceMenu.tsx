@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { MENU_TYPES } from '../../reducers/menuReducer';
+import { selectMenuData } from '../../selectors/menuSelectors';
+import { MenuItem } from '../menuItem/MenuItem';
+import { TFLService } from '../../models/menu';
 
 const ServiceMenu: React.FC = () => {
-    const menuData = useSelector((state: any) => {
-        return state.menu.sortedData
-    });
+    const menuData: Array<TFLService> = useSelector(selectMenuData);
     const dispatch = useDispatch();
     useEffect(() => {
         fetch('https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr/Status?detail=true')
@@ -19,7 +20,7 @@ const ServiceMenu: React.FC = () => {
     }, [dispatch])
 
     return (
-        <div>{JSON.stringify(menuData)}</div>
+        <menu>{menuData.map((item: TFLService) => <MenuItem {...item} />)}</menu>
     );
 };
 
