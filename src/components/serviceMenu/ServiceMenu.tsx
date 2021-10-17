@@ -4,7 +4,7 @@ import { MENU_TYPES } from '../../reducers/menuReducer';
 
 const ServiceMenu: React.FC = () => {
     const menuData = useSelector((state: any) => {
-        return state.menu.data
+        return state.menu.sortedData
     });
     const dispatch = useDispatch();
     useEffect(() => {

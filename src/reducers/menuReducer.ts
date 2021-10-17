@@ -1,5 +1,7 @@
+import { secondarySort } from '../helpers/sort';
+
 const initialState = {
-    data: []
+    sortedData: []
 };
 
 const MENU_TYPES = {
@@ -9,9 +11,11 @@ const MENU_TYPES = {
 export default function menuReducer(state = initialState, action: any) {
     switch (action.type) {
         case MENU_TYPES.UPDATE_MENU:
+            const sortedData = action.payload.sort(secondarySort('modeName', 'name'));
+            console.log(sortedData);
             return {
                 ...state,
-                data: action.payload
+                sortedData
             };
         default:
             return state;
