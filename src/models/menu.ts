@@ -14,6 +14,7 @@ interface ServiceType {
 export interface TFLService {
     id: string;
     name: string;
+    modeName: string;
     lineStatuses: Array<LineStatus>;
     serviceTypes: Array<ServiceType>;
 }
