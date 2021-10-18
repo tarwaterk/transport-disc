@@ -1,7 +1,8 @@
 import { CycleState } from '../models/state';
 
 const initialState: CycleState = {
-    bikePoints: []
+    bikePoints: [],
+    query: ''
 };
 
 const CYCLE_TYPES = {
@@ -13,7 +14,8 @@ export default function cycleReducer(state = initialState, action: any) {
         case CYCLE_TYPES.UPDATE_BIKE_POINTS:
             return {
                 ...state,
-                bikePoints: action.payload.data
+                bikePoints: action.payload.data,
+                query: action.payload.query
             };
         default:
             return state;

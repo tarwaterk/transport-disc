@@ -13,4 +13,5 @@ export interface MenuState {
 
 export interface CycleState {
     bikePoints: Array<BikePoint>;
+    query: string;
 }
