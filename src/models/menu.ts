@@ -1,4 +1,4 @@
-interface LineStatus {
+export interface LineStatus {
     id: number;
     lineId: string;
     statusSeverity: number;
