@@ -12,6 +12,14 @@ const StyledMenu = styled('menu')`
     flex-wrap: wrap;
 `;
 
+const CYCLE_HIRE_OPTION: TFLService = {
+    id: 'cycle-hire',
+    name: 'Cycle Hire',
+    modeName: 'bicycle',
+    lineStatuses: [],
+    serviceTypes: []
+};
+
 const ServiceMenu: React.FC = () => {
     const menuData: Array<TFLService> = useSelector(selectMenuData);
     const dispatch = useDispatch();
@@ -27,8 +35,13 @@ const ServiceMenu: React.FC = () => {
     }, [dispatch])
 
     return (
-        <StyledMenu>{menuData.map((item: TFLService) => <MenuItem key={`menu-item-${item.modeName}-${item.name}`} {...item} />)}</StyledMenu>
+        <StyledMenu>
+            {
+                [...menuData, CYCLE_HIRE_OPTION].map((item: TFLService) => 
+                    <MenuItem key={`menu-item-${item.modeName}-${item.name}`} {...item} />)
+            }
+        </StyledMenu>
     );
 };
 
-export { ServiceMenu };
+export { ServiceMenu, CYCLE_HIRE_OPTION };
