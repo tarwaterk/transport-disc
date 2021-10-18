@@ -6,4 +6,5 @@ export interface AppState {
 
 export interface MenuState {
     sortedData: Array<TFLService>;
+    selected: string;
 }

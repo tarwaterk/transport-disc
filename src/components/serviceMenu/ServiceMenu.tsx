@@ -20,7 +20,7 @@ const ServiceMenu: React.FC = () => {
         .then(async (response) => {
             const data = await response.json();
             dispatch({
-                type: MENU_TYPES.UPDATE_MENU,
+                type: MENU_TYPES.UPDATE_MENU_DATA,
                 payload: data
             });
         });
