@@ -44,4 +44,4 @@ const ServiceMenu: React.FC = () => {
     );
 };
 
-export { ServiceMenu };
+export { ServiceMenu, CYCLE_HIRE_OPTION };
