@@ -1,18 +1,24 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
 import { HeaderContent } from './components/headerContent/HeaderContent';
 import { MainContent } from './components/mainContent/MainContent';
 
+const StyledContainer = styled('div')`
+  .app-main {
+    display: flex;
+  }
+`;
+
 function App() {
   return (
-    <div className='app'>
+    <StyledContainer className='app'>
       <header className='app-header'>
         <HeaderContent />
       </header>
       <main className='app-main'>
         <MainContent />
       </main>
-    </div>
+    </StyledContainer>
   );
 }
 

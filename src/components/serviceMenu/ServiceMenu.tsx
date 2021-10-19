@@ -8,8 +8,13 @@ import { TFLService } from '../../models/menu';
 
 const StyledMenu = styled('menu')`
     display: flex;
-    max-width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 300px;
+    padding-inline-start: 8px;
+    padding: 8px;
+    margin-top: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 `;
 
 const CYCLE_HIRE_OPTION: TFLService = {
