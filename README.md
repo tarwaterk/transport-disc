@@ -1,3 +1,21 @@
+# Things not completed
+
+## styles
+
+I would either install and use material design library for React or build up a design library to define main components to use, color scheme, and typography.
+
+## refactor
+
+I would go back through the application and shore up basics and ensure there is no copied code. For example, build a class around using fetch to provide
+functions for performing the HTTP calls and so no code related to configuring fetch needs to be duplicated.
+
+I would probably re-arrange the folder structure under components to be less flat. For example, `bikePointSummary` could go under `bikePoints and that would make it
+easier to reason what components are consumed by which other components.
+
+## tests
+
+I would install enzyme and ensure that rendering branches return the expected components depending on the data/props.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
