@@ -2,8 +2,18 @@ import React from 'react';
 import { Dispatch } from 'redux';
 import { useDispatch } from 'react-redux';
 import debounce from 'lodash/debounce';
+import styled from 'styled-components';
 import { CYCLE_TYPES } from '../../reducers/cycleReducer';
 import { BikePoint } from '../../models/cycle';
+
+const StyledForm = styled('form')`
+    padding: 8px;
+
+    input {
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+`;
 
 const cycleQueryPayload = (query: string, data: Array<BikePoint>) => {
     return {
@@ -52,9 +62,9 @@ const CycleSearch: React.FC = () => {
     }, 1000);
 
     return (
-        <form>
-            <input type='text' onChange={handleChange} />
-        </form>
+        <StyledForm>
+            <input type='text' onChange={handleChange} placeholder={'Search for bike points'} />
+        </StyledForm>
     );
 };
 
