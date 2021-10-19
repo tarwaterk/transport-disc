@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectBikePoints, selectCycleQuery } from '../../selectors/cycleSelectors';
 import { BikePointSummary } from '../bikePointSummary/BikePointSummary';
+import { Notification } from '../notification/Notification';
 
 const BikePoints: React.FC = () => {
     const bikePoints = useSelector(selectBikePoints);
@@ -17,9 +18,7 @@ const BikePoints: React.FC = () => {
                         bikePoints.map((bikePoint) =>
                         <BikePointSummary key={`bike-point-${bikePoint.id}`} {...bikePoint} />)
                         :
-                        <h3>
-                            {`No bike points found for ${query}`}
-                        </h3>
+                        <Notification text={`No bike points found for '${query}'`} />
                     }
                 </section>
                 :

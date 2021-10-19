@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectedTFLService } from '../../selectors/menuSelectors';
 import { serviceDisruptions } from '../../helpers/tflService';
 import { TFLServiceDisruption } from '../tflServiceDisruption/TFLServiceDisruption';
+import { Notification } from '../notification/Notification';
 
 const TFLServiceSummary: React.FC = () => {
     const selectedService = useSelector(selectedTFLService);
@@ -12,15 +13,13 @@ const TFLServiceSummary: React.FC = () => {
     return (
         selectedService ?
         <div>
-            <h3>
             {
                 hasDisruption ? 
-                'Service currently suffering disruptions'
+                <Notification text={'Service currently suffering disruptions'} />
                 :
-                'No service disruptions'
+                <Notification text={'No service disruptions'} />
             }
-            </h3>
-            {tflServiceDisruptions.map((disruption) => <TFLServiceDisruption key={`disruption-${disruption.id}`} {...disruption} />)}
+            {tflServiceDisruptions.map((disruption) => <TFLServiceDisruption key={`disruption-${disruption.lineId}`} {...disruption} />)}
         </div>
         :
         null

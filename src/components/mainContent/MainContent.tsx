@@ -7,7 +7,7 @@ import { CycleHire } from '../cycleHire/CycleHire';
 import { TFLServiceSummary } from '../tflServiceSummary/TFLServiceSummary';
 
 const StyledSection = styled('section')`
-    flex: 2;
+    flex: 3;
     padding: 8px;
 `;
 

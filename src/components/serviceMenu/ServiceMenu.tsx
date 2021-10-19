@@ -7,6 +7,7 @@ import { MenuItem } from '../menuItem/MenuItem';
 import { TFLService } from '../../models/menu';
 
 const StyledMenu = styled('menu')`
+    flex: 1;
     display: flex;
     flex-direction: column;
     max-width: 300px;
